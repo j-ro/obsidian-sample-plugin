@@ -38,7 +38,7 @@ export default class ScrollToBottomOnOpen extends Plugin {
 
 	}
 	
-	//todo: test on mobile
+	//todo: test on mobile 
 	
 	async scrollToBottomOfNote(file: any) {
 		//console.log('loaded');
