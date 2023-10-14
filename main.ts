@@ -6,12 +6,12 @@ interface ScrollToBottomOnOpenSettings {
 	notesToScrollToBottom: string;
 }
 
-const DEFAULT_SETTINGS: ScrollToBottomOnSettings = {
-	//mySetting: 'default'
+const DEFAULT_SETTINGS: ScrollToBottomOnOpenSettings = {
+ 	notesToScrollToBottom: ""
 }
 
 export default class ScrollToBottomOnOpen extends Plugin {
-	settings: ScrollToBottomOnSettings;
+	settings: ScrollToBottomOnOpenSettings;
 
 	async onload() {
 		await this.loadSettings();
@@ -29,7 +29,7 @@ export default class ScrollToBottomOnOpen extends Plugin {
 			name: 'Scroll to bottom of current note',
 			editorCallback: (editor: Editor, view: MarkdownView) => {
 				//console.log(editor.getSelection());
-				this.scrollToBottomOfNote();
+				this.scrollToBottomOfNote('none');
 			}
 		});
 	}
@@ -40,13 +40,13 @@ export default class ScrollToBottomOnOpen extends Plugin {
 	
 	//todo: test on mobile
 	
-	async scrollToBottomOfNote(file) {
+	async scrollToBottomOfNote(file: any) {
 		//console.log('loaded');
 		//new Notice('loaded');
 		//console.log(file);
 		//console.log(this.settings.notesToScrollToBottom);
 		let activeFilesArray = this.settings.notesToScrollToBottom.split(",").map(s => s.trim());
-		if ((file && activeFilesArray.includes(file.name)) || !file) {
+		if ((file !== 'none' && activeFilesArray.includes(file.name)) || file === 'none') {
 			let editor = this.getEditor();
 			if (editor) {
 				let doc = editor.getDoc();
@@ -65,7 +65,7 @@ export default class ScrollToBottomOnOpen extends Plugin {
 		
 	}
 	
-	private getEditor(): Editor {
+	private getEditor(): Editor | undefined {
 		return this.app.workspace.getActiveViewOfType(MarkdownView)?.editor;
 	}
 
