@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
-	"version": "1.0.0",
+	"id": "scroll-to-bottom-on-open",
+	"name": "Scroll To Bottom On Open",
+	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "Automatically scroll to the bottom of specified notes when they are opened. Great for notes such as long todo lists, where you always want to edit them from the bottom.",
+	"author": "Jason Rosenbaum",
+	"authorUrl": "https://github.com/j-ro",
 	"isDesktopOnly": false
 }
