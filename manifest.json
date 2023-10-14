@@ -1,7 +1,7 @@
 {
 	"id": "scroll-to-bottom-on-open",
 	"name": "Scroll To Bottom On Open",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"minAppVersion": "0.15.0",
 	"description": "Automatically scroll to the bottom of specified notes when they are opened. Great for notes such as long todo lists, where you always want to edit them from the bottom.",
 	"author": "Jason Rosenbaum",
